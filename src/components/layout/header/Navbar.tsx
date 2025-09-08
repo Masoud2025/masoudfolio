@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
 
           {isDropdownOpen && (
             <div className="absolute mt-2 w-full bg-white border rounded shadow-lg z-20 animate-fadeIn">
-              {["All", "Web", "Mobile", "Design"].map((cat) => (
+              {["All", "3D", "Angular","React","Next.js","Mobile", "full-stack"].map((cat) => (
                 <div
                   key={cat}
                   onClick={() => {
@@ -78,13 +78,13 @@ const Navbar: React.FC = () => {
       <div className="hidden md:flex space-x-4">
         <a
           href="#projects"
-          className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          className="px-3 py-1 bg-[#F3F4F6] text-black rounded hover:text-blue-700 transition"
         >
           Download cv
         </a>
         <a
           href="#resume"
-          className="px-3 py-1 bg-gray-700 text-white rounded hover:bg-gray-600 transition"
+          className="px-3 py-1 bg-[#F3F4F6] text-black rounded hover:text-blue-700 transition"
         >
           contact
         </a>
