@@ -5,7 +5,8 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink, X } from "lucide-react";
 
-const projectsData = Array.from({ length: 24 }, (_, i) => ({
+const project_counter: number = 24;
+const projectsData = Array.from({ length: project_counter }, (_, i) => ({
   id: i,
   title: `Project ${i + 1}`,
   description: "A professional project case study with details.",
@@ -206,7 +207,7 @@ const Cards = () => {
       <span className="inline-flex items-center gap-3 text-2xl tracking-wider text-gray-900 absolute left-[40px] top-[-10px]">
         <span className="uppercase text-gray-700">Projects</span>
         <span className="relative px-3 py-1 border border-gray-300 rounded-md text-gray-800 font-semibold">
-          24
+          {project_counter}
         </span>
       </span>
 
