@@ -12,9 +12,20 @@ const projectsData = Array.from({ length: 24 }, (_, i) => ({
   image: `/p${i + 1}.png`,
   difficulty: Math.floor(Math.random() * 5) + 1,
 }));
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  difficulty: number;
+};
 
+type ProjectDrawerProps = {
+  project: Project;
+  onClose: () => void;
+};
 // ---------------- Drawer Component ----------------
-const ProjectDrawer = ({ project, onClose }: any) => {
+const ProjectDrawer = ({ project, onClose }: ProjectDrawerProps) => {
   if (!project) return null;
 
   return (
@@ -177,7 +188,9 @@ const ProjectDrawer = ({ project, onClose }: any) => {
 
 // ---------------- Cards Grid ----------------
 const Cards = () => {
-  const [selected, setSelected] = useState<any>(null);
+  // const [selected, setSelected] = useState<any>(null);
+
+  const [selected, setSelected] = useState<Project | null>(null);
 
   // 🔒 Lock body scroll when drawer is open
   useEffect(() => {
@@ -233,7 +246,10 @@ const Cards = () => {
       </div>
 
       {/* Drawer */}
-      <ProjectDrawer project={selected} onClose={() => setSelected(null)} />
+      {/* <ProjectDrawer project={selected} onClose={() => setSelected(null)} /> */}
+      {selected && (
+        <ProjectDrawer project={selected} onClose={() => setSelected(null)} />
+      )}
     </div>
   );
 };
