@@ -160,7 +160,7 @@ const ProjectDrawer = ({ project, onClose }: ProjectDrawerProps) => {
               Colors Used
             </h3>
             <div className="flex justify-center gap-10">
-              {["#1E293B", "#F43F5E", "#FACC15"].map((c) => (
+              {["#1E293B", "#F43F5E", "#FACC15","#FAAA12"].map((c) => (
                 <div key={c} className="flex flex-col items-center gap-2">
                   <div
                     className="w-16 h-16 rounded-full shadow border"
