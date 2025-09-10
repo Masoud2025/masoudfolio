@@ -1,7 +1,46 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@layer base {
+  /* Light theme */
+  .root {
+    --background: hsl(0, 0%, 98%); /* almost white */
+    --foreground: hsl(210, 15%, 20%); /* dark text */
+    --primary: hsl(220, 90%, 55%); /* bright blue */
+  }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Dark theme */
+  .dark {
+    --background: hsl(208, 29%, 10%); /* very dark blue-gray */
+    --foreground: hsl(0, 0%, 95%); /* almost white text */
+    --primary: hsl(340, 80%, 60%); /* pink/purple accent */
+  }
+
+  /* Neon theme */
+  .neon {
+    --background: hsl(220, 90%, 5%); /* very dark blue */
+    --foreground: hsl(120, 100%, 85%); /* bright neon green text */
+    --primary: hsl(300, 100%, 60%); /* neon magenta accent */
+  }
+
+  /* Example usage */
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  a {
+    color: var(--primary);
+  }
 }
 
+/* HTML: <div class="rounded-edge"></div> */
+.rounded-edge {
+  height: 800px;
+  aspect-ratio: 3/2;
+  /* update the 85% to control the curvature
+     you can also update the 50% to control the position
+  */
+  clip-path: ellipse(85% 100% at 50% 0);
+  background: #cc2a41;
+  background-image: url('/hero.jpg');
+  background-position: center;
+}
