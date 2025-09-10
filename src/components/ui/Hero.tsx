@@ -1,7 +1,11 @@
+import CardCoverflow from './PosterCarousel'
+
 const Hero = () => {
   return (
     <>
-      <div className='rounded-edge w-full'></div>
+      <div className='rounded-edge w-full'>
+        <CardCoverflow />
+      </div>
     </>
   )
 }

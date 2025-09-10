@@ -11,7 +11,7 @@
   .dark {
     --background: hsl(208, 29%, 10%); /* very dark blue-gray */
     --foreground: hsl(0, 0%, 95%); /* almost white text */
-    --primary: hsl(340, 80%, 60%); /* pink/purple accent */
+    --primary: hsl(340, 80%, 60%); /* pink/purple  accent */
   }
 
   /* Neon theme */
@@ -25,6 +25,7 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
+    scroll-behavior: smooth;
   }
 
   a {
@@ -34,7 +35,7 @@
 
 /* HTML: <div class="rounded-edge"></div> */
 .rounded-edge {
-  height: 800px;
+  height: 870px;
   aspect-ratio: 3/2;
   /* update the 85% to control the curvature
      you can also update the 50% to control the position
@@ -43,4 +44,20 @@
   background: #cc2a41;
   background-image: url('/hero.jpg');
   background-position: center;
+}
+/* Hero card animations  */
+.CardsAnimation {
+  animation: example 2s ease-in-out infinite alternate;
+}
+.CardsAnimation div {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+@keyframes example {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px); /* مثلا 20px بره بالا */
+  }
 }

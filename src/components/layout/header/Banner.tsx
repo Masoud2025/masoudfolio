@@ -21,7 +21,7 @@ const Banner = () => {
           dark ? 'text-gray-300' : 'text-gray-600'
         } text-base md:text-lg`}
       >
-        | Code. Create. Innovate.  | 
+        | Code. Create. Innovate. |
       </span>
       <button
         onClick={() => setDark(!dark)}
