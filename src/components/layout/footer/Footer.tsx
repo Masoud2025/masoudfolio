@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Github, Linkedin, Twitter } from 'lucide-react'
-
+import EmojiGetMad from '@/components/ui/Emoji'
 const Footer: React.FC = () => {
   return (
     <footer className=' px-6 py-12 absolute  w-full'>
@@ -25,6 +25,9 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Section */}
+      <div className='absolute left-[43em] bottom-[3em]'>
+        <EmojiGetMad />
+      </div>
       <div className='mt-6 text-center text-gray-500 text-sm'>
         &copy; {new Date().getFullYear()} MyPortfolio. made with love❤️
       </div>

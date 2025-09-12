@@ -1,7 +1,8 @@
 'use client'
+
 import { useState, useEffect } from 'react'
 
-const Banner = () => {
+const Navbar = () => {
   const [dark, setDark] = useState(false)
 
   useEffect(() => {
@@ -10,26 +11,68 @@ const Banner = () => {
     else html.classList.remove('dark')
   }, [dark])
 
+  const buttons = [
+    { id: 0, name: 'Download CV', href: '/#' },
+    { id: 1, name: 'Blog', href: '/#' },
+  ]
+
   return (
-    <div
-      className={`w-full py-3 px-6 flex items-center justify-center space-x-4 transition-colors
-        ${dark ? 'bg-[#121a21] text-white' : 'bg-gray-100 text-gray-900'}`}
+    <nav
+      className={`w-full px-6 py-4 flex items-center justify-between transition-colors
+        ${
+          dark ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'
+        } shadow-md`}
     >
-      {/* <span className='font-bold text-lg md:text-xl'>Software Engineer</span> */}
-      <span
-        className={`${
-          dark ? 'text-gray-300' : 'text-gray-600'
-        } text-base md:text-lg`}
-      >
-        | Code. Create. Innovate. |
-      </span>
-      <button
-        onClick={() => setDark(!dark)}
-        className={`w-6 h-6 rounded-full border-2 border-black transition-colors hover:cursor-pointer
-          ${dark ? 'bg-white' : 'bg-[#121a21]'}`}
-      />
-    </div>
+      {/*  */}
+      <div className='text-xl font-semibold'>
+        Code<span className='text-red-500 text-4xl font-extrabold'>.</span>{' '}
+        Create
+        <span className='text-green-500 text-4xl font-extrabold'>.</span>{' '}
+        Innovate
+      </div>
+
+      {/* منو دکمه‌ها */}
+      <div className='flex items-center space-x-6'>
+        {/* زبان */}
+        <div
+          className={`px-3 py-1 rounded border ${
+            dark
+              ? 'border-gray-600 text-gray-200'
+              : 'border-gray-300 text-gray-700'
+          } hover:bg-amber-50 hover:text-gray-900 transition-colors cursor-pointer`}
+        >
+          FA | EN
+        </div>
+
+        {/* حالت تاریک */}
+        <button
+          onClick={() => setDark(!dark)}
+          className={`w-8 h-8 rounded-full flex items-center justify-center border ${
+            dark ? 'border-gray-400 bg-white' : 'border-gray-700 bg-gray-800'
+          } text-sm transition-colors hover:opacity-80`}
+        >
+          {dark ? '☀️' : '🌙'}
+        </button>
+
+        {/* لینک‌ها */}
+        <div className='flex space-x-4'>
+          {buttons.map((btn) => (
+            <a
+              key={btn.id}
+              href={btn.href}
+              className={`px-4 py-2 font-medium rounded-md border ${
+                dark
+                  ? 'bg-gray-700 border-gray-600 text-white hover:bg-gray-600'
+                  : 'bg-amber-100 border-amber-300 text-gray-900 hover:bg-amber-200'
+              } transition-colors`}
+            >
+              {btn.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </nav>
   )
 }
 
-export default Banner
+export default Navbar

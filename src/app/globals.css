@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+
 @layer base {
   /* Light theme */
   .root {
@@ -26,6 +27,7 @@
     background-color: var(--background);
     color: var(--foreground);
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   a {
@@ -58,6 +60,127 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(-20px); /* مثلا 20px بره بالا */
+    transform: translateY(-20px); /*move up 20 px*/
   }
+}
+
+/* Emoji get mad */
+
+.face {
+  width: 30px; /* خیلی کوچیک */
+  height: 30px;
+  background: #ffda6a;
+  box-shadow: 0 0 2px black;
+  border-radius: 50%;
+  position: relative;
+  transition: all 1.5s ease-in-out;
+  cursor: pointer;
+}
+
+.face:hover {
+  background: #ff1e1e;
+}
+
+.eyebrow,
+.eye,
+.mouth {
+  box-shadow: 0px 0px 1px black;
+}
+
+.eyebrow {
+  width: 5px;
+  height: 1.2px;
+  background-color: black;
+  border-radius: 25%;
+  position: absolute;
+  top: 6px;
+}
+
+.eyebrow-left {
+  left: 6px;
+  transition: all 1s ease-in-out;
+}
+
+.face:hover .eyebrow-left {
+  top: 9px;
+  transform: rotate(30deg);
+}
+
+.eyebrow-right {
+  right: 6px;
+  transition: all 1s ease-in-out;
+}
+
+.face:hover .eyebrow-right {
+  top: 9px;
+  transform: rotate(-30deg);
+}
+
+.eye {
+  width: 5px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  top: 7px;
+}
+
+.eye-left {
+  left: 6px;
+  transition: all 1s ease-in-out;
+}
+
+.face:hover .eye-left {
+  width: 3.5px;
+  height: 3.5px;
+  left: 7px;
+  top: 10px;
+}
+
+.eye-right {
+  right: 6px;
+  transition: all 1s ease-in-out;
+}
+
+.face:hover .eye-right {
+  width: 3.5px;
+  height: 3.5px;
+  right: 7px;
+  top: 10px;
+}
+
+.mouth {
+  width: 15px;
+  height: 7px;
+  border: 1.5px solid black;
+  position: absolute;
+  top: 18px;
+  left: 7px;
+  border-radius: 0 0 15px 15px;
+  transition: all 1s ease-in-out;
+  background-color: lightpink;
+}
+
+.face:hover .mouth {
+  height: 2px;
+  top: 20px;
+}
+/* Dividing Line Dashed */
+/* HTML: <div class="rounded-dashes"></div> */
+.rounded-dashes {
+  --size: 5px; /* ارتفاع خط و اندازه نقاط */
+  --color: #b9b9b9; /* رنگ خط و نقاط */
+
+  width: 100%;
+  height: var(--size);
+
+  /* تعریف پس‌زمینه */
+  --_g: var(--size) top 50%, var(--color) calc(100% - 1px), transparent;
+
+  background: 0 / calc(4 * var(--size)) space no-repeat; /* فاصله بین نقاط */
+
+  background-image: radial-gradient(circle closest-side at left var(--_g)),
+    /* نقطه سمت چپ */ radial-gradient(circle closest-side at right var(--_g)),
+    /* نقطه سمت راست */
+      linear-gradient(90deg, transparent 25%, var(--color) 0 75%, transparent 0); /* خط وسط */
 }
