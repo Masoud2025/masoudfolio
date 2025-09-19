@@ -41,14 +41,14 @@ const projects = [
 
 const Project_Cards = () => {
   return (
-    <div className={`${lalezar.className} p-10 relative top-[50em]`}>
+    <div className={`${lalezar.className} p-10 relative top-[90em] `}>
       {/* Section Title */}
       <h1 className='text-4xl md:text-5xl text-center mb-10 font-bold '>
         پروژه‌ها
       </h1>
 
       {/* Cards */}
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-8 '>
         {projects.map((project, i) => (
           <motion.div
             key={i}
@@ -56,7 +56,7 @@ const Project_Cards = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
             viewport={{ once: true }}
-            className='relative group border rounded-2xl overflow-hidden shadow-lg cursor-pointer h-96 flex items-center justify-center bg-white'
+            className='relative group border rounded-2xl overflow-hidden shadow-lg cursor-pointer h-96 flex items-center justify-center bg-white '
           >
             {/* First Text  */}
             <div className='absolute inset-0 flex flex-col items-center justify-center text-center p-6 transition-opacity duration-500 group-hover:opacity-0'>

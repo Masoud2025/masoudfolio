@@ -10,8 +10,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: '404 not found ➠ 302 Found',
-  description: 'Portfolio of Masoud',
+  title: 'Masoud Jafari',
+  description:
+    'personal website create by Masoud Jafari & publish by Vercel & Thanks to next.js Tailwind Eslint ',
 }
 
 export default function RootLayout({
