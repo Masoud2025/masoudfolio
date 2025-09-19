@@ -22,12 +22,12 @@ const FluidBackground = () => {
         SHADING: true,
         COLORFUL: true,
         COLOR_UPDATE_SPEED: 6,
-        BACK_COLOR: { r: 255, g: 255, b: 255 }, // پس‌زمینه سفید
+        BACK_COLOR: { r: 255, g: 255, b: 255 }, //  white background
         TRANSPARENT: false,
         BLOOM: true,
       })
 
-      // حرکت موس → پاشیدن رنگ
+      // Mouse movement and splash the color on the page
       const splat = (x: number, y: number) => {
         const e = new CustomEvent('splats', {
           detail: {
