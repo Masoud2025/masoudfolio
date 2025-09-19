@@ -24,7 +24,7 @@
 
   /* Example usage */
   body {
-    background-color: var(--background);
+    /* background-color: var(--background); */
     color: var(--foreground);
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -183,4 +183,8 @@
     /* نقطه سمت چپ */ radial-gradient(circle closest-side at right var(--_g)),
     /* نقطه سمت راست */
       linear-gradient(90deg, transparent 25%, var(--color) 0 75%, transparent 0); /* خط وسط */
+}
+
+html {
+  font-size: clamp(5px, 2vw, 16px);
 }

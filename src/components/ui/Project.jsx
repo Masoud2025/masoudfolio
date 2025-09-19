@@ -16,7 +16,7 @@ const Projects = () => {
         {ProjectData.map((project) => (
           <motion.div
             key={project.id}
-            className='relative group rounded-2xl overflow-hidden shadow-xl cursor-pointer'
+            className='relative group rounded-2xl overflow-hidden shadow-xl cursor-pointer '
             whileHover={{ scale: 1.05 }}
             onClick={() => setOpenProject(project)}
           >
